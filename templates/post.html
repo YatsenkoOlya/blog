@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<p>
+{% for p in post %}
+{{p}}<br>
+{% endfor %}
+    </p>
+{% for c in range(count) %}
+<div><img src="{{ url_for('posts_file', post_id=post_id, count=file_id+c) }}"></div>
+{% endfor %}
+{% endblock %}

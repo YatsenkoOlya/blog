@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+{% for cat, msg in get_flashed_messages(True) %}
+<div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+<table border="0" class="profile-table">
+    <tr>
+        <td valign="top">
+            <div class="profile-ava"><img src="{{ url_for('userava', user_id=id) }}"></div>
+        </td>
+    </tr>
+    {% if id_user=='1' -%}
+    <tr>
+        <td><p class="title"><a href="{{ url_for('deleteWriter',alias=w_id)}}">Удалить страницу автора</a></p></td>
+    </tr>
+    {% endif -%}
+</table>
+<h2>Список статей</h2>
+<table>
+    <tr>
+        <td>
+            <ul class="profile-posts">
+                {% for p in posts %}
+
+                <li>
+                    <p class="title"><a href="{{url_for('showPost', id= p.id)}}">{{p.title}}</a></p>
+                    <p class="annonce">{{p.text[:35]}}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </td>
+        <td>
+            {% for p in posts %}
+            {% if id_user=='1' -%}
+
+                <p><a href="{{ url_for('deletePost',alias=w_id, id_post=p.id)}}">Удалить</a></p>
+                <br>
+
+            {% endif -%}
+            {% endfor %}
+        </td>
+    </tr>
+</table>
+<!--<ul class="list-posts">-->
+<!--{% for p in posts %}-->
+<!--	{% if id_user=='1' -%}-->
+<!--    <tr>-->
+<!--		<td><p class="title"><a href="{{ url_for('deletePost',alias=w_id, id_post=p.id)}}">Удалить статью</a></p></td>-->
+<!--    </tr>-->
+<!--    {% endif -%}-->
+<!--<li>-->
+<!--<p class="title"><a href="{{url_for('showPost', id= p.id)}}">{{p.title}}</a></p>-->
+<!--<p class="annonce">{{p.text[:35]}}</p>-->
+<!--</li>-->
+<!--{% endfor %}-->
+<!--</ul>-->
+<!--{% endblock %}-->

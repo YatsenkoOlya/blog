@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+<!--Главная страница-->
+
+{% block content %}
+{{ super() }}
+<hr>
+
+<table border="0" align="right" cellpadding="5" class="title-table">
+<tr>
+    <th>О сайте</th>
+</tr>
+    <tr>
+<td>Вам предоставлена возможность просматривать блоги путешественников и читать их статьи для того, чтобы узнавать о новых местах и их достопримечательностях.
+    <p>Также вы можете сами делиться впечатлениями от поездки и оставлять важную информацию для ваших коллег-путешественников.
+        Для этого необходимо зарегистрироваться на сайте.</p>
+    </td>
+</tr></table>
+
+<h2>Список блогеров</h2>
+<ul class="list-posts">
+{% for w in writers %}
+    {% if not w.is_admin %}
+<li>
+<p class="title"><a href="{{url_for('showWriters', alias= w.id)}}">{{w.name}}</a></p>
+</li>
+    {% endif %}
+{% endfor %}
+</ul>
+{% endblock %}
+
+
+<!--ul.list-posts {-->
+<!--	list-style: none;-->
+<!--	margin: 0;-->
+<!--	padding: 5;-->
+<!--	max-width: 350px;-->
+<!--	margin-left: 4%;-->
+<!--}-->
+<!--ul.list-posts li {-->
+<!--	margin: 20px 0 0 0;-->
+<!--	border: 1px solid #4B0082;-->
+<!--}-->
+<!--ul.list-posts .title {-->
+<!--	margin: 0;-->
+<!--	padding: 5px;-->
+<!--	background: #E6E6FA;-->
+<!--}-->
+<!--ul.list-posts .annonce {-->
+<!--	margin: 0;-->
+<!--	padding: 10px 5px 10px 5px;-->
+<!--}-->

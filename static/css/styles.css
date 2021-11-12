@@ -1,0 +1,257 @@
+html, body {
+	font-family: 'Snell Roundhand', cursive;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	color: #0000CD;
+	background: #B0C4DE;
+}
+
+a {
+	color: #0000CD;
+	text-decoration: none;
+}
+a:hover {
+	color: #191970;
+	text-decoration: underline;
+}
+
+.clear {clear: both;}
+
+ul.mainmenu ul{
+        display: none;
+        background-color: #4682B4;
+        position: absolute;
+        top: 100%;
+}
+
+ul.mainmenu li:hover ul { display: block; }
+
+ul.mainmenu, ul.mainmenu ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      ul.mainmenu {
+        height: 50px;
+        background-color: #4682B4;
+        padding-right: 30px;
+        min-width: 470px;
+      }
+      ul.mainmenu li {
+        float: right;
+        position: relative;
+        height: 100%;
+      }
+      ul.mainmenu li a {
+        display: block;
+        padding: 12px;
+        width: 120px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        font-size: 15pt;
+      }
+      ul.mainmenu ul li { float: none; }
+      ul.mainmenu li:hover { background-color: #00BFFF; }
+      ul.mainmenu ul li:hover { background-color: #00BFFF; }
+
+
+div.content1 {
+	margin: 10px;
+	text-align: center;
+}
+
+div.content {
+	margin: 10px;
+}
+
+.form-contact label {
+	display: inline-block;
+	min-width: 80px;
+}
+.form-contact p {margin: 10px 0 10px 0; margin-left: 1%;}
+.form-contact input[type=submit], textarea {
+	font-size: 16px;
+}
+
+.flash {padding: 10px;}
+.flash.success {
+	border: 1px solid #21DB56;
+	background: #AEFFC5;
+}
+.flash.error {
+	border: 1px solid #FF4343;
+	background: #FF9C9C;
+}
+
+ul.list-posts {
+counter-reset: li;
+list-style: none;
+font: 16px 'Snell Roundhand', cursive;
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+ul.list-posts a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+margin-left: 6%;
+max-width: 350px;
+background: #E6E6FA;
+color: #0000CD;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+ul.list-posts a:hover {background: #AFEEEE;}
+ul.list-posts a:hover:before {transform: rotate(360deg);}
+ul.list-posts a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background:  #ADD8E6;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+ul.list-posts .annonce {
+	margin: 0;
+	padding: 0px 5px 10px 5px;
+	margin-left: 8%;
+}
+
+
+ul.profile-posts {
+counter-reset: li;
+list-style: none;
+font: 16px 'Snell Roundhand', cursive;
+padding: 0;
+text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+ul.profile-posts a {
+position: relative;
+display: block;
+padding: .4em .4em .4em 2em;
+margin: .5em 0;
+background: #E6E6FA;
+color: #0000CD;
+text-decoration: none;
+border-radius: .3em;
+transition: .3s ease-out;
+}
+ul.profile-posts a:hover {background: #AFEEEE;}
+ul.profile-posts a:hover:before {transform: rotate(360deg);}
+ul.profile-posts a:before {
+content: counter(li);
+counter-increment: li;
+position: absolute;
+left: -1.3em;
+top: 50%;
+margin-top: -1.3em;
+background:  #ADD8E6;
+height: 2em;
+width: 2em;
+line-height: 2em;
+border: .3em solid white;
+text-align: center;
+font-weight: bold;
+border-radius: 2em;
+transition: all .3s ease-out;
+}
+ul.profile-posts .annonce {
+	margin: 0;
+	padding: 0px 5px 10px 5px;
+	margin-left: 10%;
+}
+ul.profile-posts li{
+	margin-left: 20%;
+	max-width: 450px;
+}
+
+
+.photo {
+width: 130px;
+height: 130px;
+}
+.photo input[type=submit], input[type=file] {
+	width: 100%;
+	font-size: 18px;
+}
+
+.title-table{
+width: 700px;
+margin-top: 30px;
+margin-right: 4%;
+border: 2px solid transparent;
+}
+.title-table th{
+color: #0000CD;
+height: 30px;
+text-align: left;
+background:  #E6E6FA;
+}
+.title-table td{
+color: #0000CD;
+height: 100px;
+text-align: left;
+vertical-align: top;
+background: #ADD8E6;
+}
+
+
+h2 {
+max-width: 20em;
+text-align: center;
+margin-top: 30px;
+}
+
+.profile-ava {
+	width: 150px;
+	text-align: center;
+	overflow: hidden;
+	padding: 10px;
+}
+.profile-ava img {max-width: 150px; height: auto;}
+
+.profile-load {
+	margin-top: 10px;
+	overflow: hidden;
+	max-width: 150px;
+}
+.profile-load input[type=submit], input[type=file] {
+	width: 100%;
+	font-size: 18px;
+}
+
+.profile-load p {
+	padding: 0;
+	margin: 5px 0 0 0;
+}
+
+.profile-panel input[type=submit], input[type=file] {
+  color: #800080;
+  border-radius: 5px;
+  background: #1E90FF;
+  box-shadow: 0 -3px #1E90FF inset;
+  transition: 0.2s;
+}
+
+.profile-panel {padding: 0 0 0 10px;}
+ul.profile-info {
+	list-style: none;
+	margin: 10px 0 0 0;
+	padding: 0;
+	color: #800080;
+}
+ul.profile-info li {margin-top: 10px;}
