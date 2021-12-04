@@ -29,7 +29,7 @@ def create_db():
     db.commit() # записываем изменения в бд
     db.close()
 
-create_db()
+#create_db()
 
 # Соединение с БД, если оно еще не установлено
 def get_db():
