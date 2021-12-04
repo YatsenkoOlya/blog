@@ -2,12 +2,14 @@
 
 {% block content %}
 {{ super() }}
-<p>
-{% for p in post %}
-{{p}}<br>
-{% endfor %}
-    </p>
-{% for c in range(count) %}
-<div><img src="{{ url_for('posts_file', post_id=post_id, count=file_id+c) }}"></div>
-{% endfor %}
+
+<p>Название статьи: {{post.title}} </p>
+<p>Автор статьи: {{author.login}} </p>
+<p>{{post.text}} </p>
+
+<form id="deletion" action="{{ url_for('delete_post', id_post=post.id, id_auth=author.id) }}" method="post">
+    <p><input type="submit" value="Удалить статью"/></p>
+</form>
+<p><a href="{{ url_for('change_post', id_post=post.id, id_auth=author.id) }}">Редактировать статью</a></p>
+
 {% endblock %}

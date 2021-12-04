@@ -14,9 +14,10 @@
 {% block content -%}
 	{%- block mainmenu -%}
 <ul class="mainmenu">
-{% for p in menu %}
-<li><a href="{{ url_for(p.url)}}">{{p.title}}</a></li>
-{% endfor %}
+    <li><a href="{{url_for('show_all_posts')}}">Статьи</a></li>
+	    <li><a href="{{url_for('show_authors')}}">Авторы</a></li>
+	    <li><a href="{{url_for('show_topics')}}">Темы</a></li>
+
 </ul>
 	{% endblock mainmenu -%}
 <div class="clear"></div>

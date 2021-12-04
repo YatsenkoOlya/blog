@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<h1>Список авторов</h1>
+<div class="lists">
+{% if not authors %}
+    <p1>Список пуст</p1>
+    {% else %}
+{% for a in authors %}
+<p class="title"><a href="{{ url_for('show_authors_2', id=a.id)}}">{{a.login}}</a></p>
+{% endfor %}
+    {% endif %}
+</div>
+{% endblock%}

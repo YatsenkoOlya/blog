@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+
+<h1>Список тем</h1>
+<div class="lists">
+    {% if not topics %}
+    <p1>Список пуст</p1>
+    {% else %}
+    {% for t in topics %}
+    <p class="title"><a href="{{ url_for('show_topics_2', id=t.id_topics)}}"> {{t.title}}</a></p>
+    {% endfor %}
+    {% endif %}
+</div>
+{% endblock%}
